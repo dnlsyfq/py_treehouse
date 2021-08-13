@@ -24,3 +24,4 @@ print(var,"")
 * print(f' {variable}')
 * " {} {}".format(variableOne,variableTwo)
 * "var" in "variable"
+
