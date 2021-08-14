@@ -25,3 +25,14 @@ print(var,"")
 * " {} {}".format(variableOne,variableTwo)
 * "var" in "variable"
 
+if condition:
+    statement
+elif condition:
+    statement
+else:
+    statement
+
+### Comparison
+
+* isinstance(5,int)
+* type(5) == int
