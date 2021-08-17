@@ -105,4 +105,28 @@ while password != 'opensesame':
     attempt_count += 1
 print("Welcome to secret town")
 ```
+### List
 
+* len(list)
+* list(string)
+  
+list method
+* list.append(value)
+* list.extend(list)
+* list + list
+* list.insert(index,value)
+* del list
+* del list[index]
+* list.pop()
+* list.pop(index)
+
+* for i in list
+* i in list
+* list.copy()
+* list.remove(variable)
+* string.split()
+
+```
+import time 
+time.sleep(.5)
+```
