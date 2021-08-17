@@ -54,3 +54,13 @@
 #     password = input("Invalid password, try again: ")
 #     attempt_count += 1
 # print("Welcome to secret town")
+
+expenses = [
+    [5,2.75,22,0,0],
+    [24.75,5.50,15,22,8],
+    [2.75,5.5,0,29,5]
+]
+
+week = 1
+for i in expenses:
+    print("Week {}: {}".format(week, sum(i)))

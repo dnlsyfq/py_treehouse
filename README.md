@@ -124,9 +124,82 @@ list method
 * i in list
 * list.copy()
 * list.remove(variable)
-* string.split()
+* string.split(" ")
+* ", ".join(list)
 
 ```
 import time 
 time.sleep(.5)
 ```
+```
+expenses = [
+    [5,2.75,22,0,0],
+    [24.75,5.50,15,22,8],
+    [2.75,5.5,0,29,5]
+]
+
+week = 1
+for i in expenses:
+    print("Week {}: {}".format(week, sum(i)))
+```
+### Dictionary
+
+dict = {
+    key:value
+}
+
+* dict.keys()
+* dict.values()
+* sorted(dict.keys())
+* del dict[key]
+
+* for k,v in dict.items():
+    print(k,v)
+
+```
+def print_teacher(**kwargs):
+    for key,value in kwargs.items():
+        print(f"{key}:{value}")
+
+print_teacher(name='Ashley', job='Instructor', topic='Python')
+```
+
+### loops 
+
+* for i in variable:
+    print(i)
+  
+* for index,element in enumerate(list):
+    print(index,element)
+  
+* range(start,stop,step)
+
+### sequence
+
+* list[start:stop]
+* list[::-1]
+* 'character' in string
+* 'character' not in string 
+* string.count(value)
+* string.index(value)
+* list.index(value)
+* list.reverse()
+
+### function
+
+```
+def packer(*args):
+    print(args)
+
+packer('hi','i','love','python')
+```
+
+unpacking
+```
+def unpacker():
+    return (1,2,3)
+
+var1,var2,var3 = unpacker()
+```
+
+
