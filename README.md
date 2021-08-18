@@ -202,4 +202,370 @@ def unpacker():
 var1,var2,var3 = unpacker()
 ```
 
+### dunder
 
+* app.py
+```
+def print_hello():
+  print("Hello from app")
+  
+
+if __name__ == '__main__':  
+  print_hello()
+```
+
+* second_app.py
+```
+import app
+
+print("Hello from second app")
+app.print_hello()
+```
+
+### OOP 
+
+dir(oop)
+
+```
+class Car:
+    pass
+
+class Car():
+    pass
+
+my_car = Car()
+
+print(my_car)
+print(type(my_car))
+print(isinstance(my_car,Car))
+```
+
+* class attributes
+
+```class Car:
+    wheels = 4
+    doors = 2
+    engine = True
+
+car_one = Car()
+car_two = Car()
+
+print(car_one.doors)
+print(car_two.doors)
+print(Car.doors)
+```
+
+* instance attributes 
+
+```
+class Car:
+    wheels = 4
+    doors = 2
+    engine = True
+
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+```
+
+with default value
+```
+class Car:
+    wheels = 4
+    doors = 2
+    engine = True
+
+    def __init__(self, model, year, make="Ford"):
+        self.make = make
+        self.model = model
+        self.year = year
+```
+
+with method 
+```
+class Car:
+    wheels = 4
+    doors = 2
+    engine = True
+
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+
+    def stop(self):
+        print('The car has stopped')
+
+    def go(self,speed):
+        print(f'The car going {speed}')
+
+
+car_one = Car("Ford","Model T",1908)
+car_one.stop()
+car_one.go('slow')
+```
+
+with method 2
+```
+class Car:
+    wheels = 4
+    doors = 2
+    engine = True
+
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.is_moving = False
+        self.gas = 100
+
+    def stop(self):
+        if self.is_moving:
+            print('The car has stopped')
+            self.is_moving = False
+        else:
+            print('The car already stopped ')
+
+    def go(self,speed):
+        if self.use_gas():
+            if not self.is_moving:
+                print('The car starts moving')
+                self.is_moving = True
+            print(f'The car going {speed}')
+        else:
+            print('You have run out of gas')
+            self.stop()
+
+    def use_gas(self):
+        self.gas -= 50
+        if self.gas <= 0:
+            return False
+        else:
+            return True
+```
+
+```
+class Panda:
+    species = 'Ailuropoda melanoleuca'
+    food = 'bamboo'
+
+    def __init__(self, name, age):
+        self.is_hungry = True
+        self.name = name
+        self.age = age
+        
+    def eat(self):
+        self.is_hungry = False
+        return f'{self.name} eats {self.food}.'
+```
+
+* dunder string 
+
+```
+class Car:
+
+    wheels = 4
+    doors = 2
+    engine = True
+
+
+
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.is_moving = False
+        self.gas = 100
+
+    def __str__(self):
+        return f'{self.make} {self.model} {self.year}'
+        
+car_one = Car("Ford","Model T",1908)
+print(str(car_one))        
+```
+
+* dunder iter 
+
+```
+class Dealership:
+
+    def __init__(self):
+        self.cars = ['Ford','Mazda','Honda']
+
+    def __iter__(self):
+        yield from self.cars
+
+my_dealership = Dealership()
+for car in my_dealership:
+    print(car)
+```
+
+```
+class Car:
+
+    wheels = 4
+    doors = 2
+    engine = True
+
+
+
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.is_moving = False
+        self.gas = 100
+
+    def __str__(self):
+        return f'{self.make} {self.model} {self.year}'
+
+
+
+
+    def stop(self):
+        if self.is_moving:
+            print('The car has stopped')
+            self.is_moving = False
+        else:
+            print('The car already stopped ')
+
+    def go(self,speed):
+        if self.use_gas():
+            if not self.is_moving:
+                print('The car starts moving')
+                self.is_moving = True
+            print(f'The car going {speed}')
+        else:
+            print('You have run out of gas')
+            self.stop()
+
+    def use_gas(self):
+        self.gas -= 50
+        if self.gas <= 0:
+            return False
+        else:
+            return True
+
+class Dealership:
+
+    def __init__(self):
+        self.cars = []
+
+    def __iter__(self):
+        yield from self.cars
+
+    def add_car(self,car):
+        self.cars.append(car)
+
+
+
+car_one = Car("Ford","Model T",1908)
+car_two = Car('Mazda','3',2020)
+
+my_dealership = Dealership()
+my_dealership.add_car(car_one)
+my_dealership.add_car(car_two)
+for car in my_dealership:
+    print(car)
+```
+
+* dunder equal
+
+```
+class Car:
+
+    wheels = 4
+    doors = 2
+    engine = True
+
+
+
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.is_moving = False
+        self.gas = 100
+
+    def __str__(self):
+        return f'{self.make} {self.model} {self.year}'
+
+    def __eq__(self,other):
+        return self.make == other.make and self.model == other.model
+
+
+    def stop(self):
+        if self.is_moving:
+            print('The car has stopped')
+            self.is_moving = False
+        else:
+            print('The car already stopped ')
+
+    def go(self,speed):
+        if self.use_gas():
+            if not self.is_moving:
+                print('The car starts moving')
+                self.is_moving = True
+            print(f'The car going {speed}')
+        else:
+            print('You have run out of gas')
+            self.stop()
+
+    def use_gas(self):
+        self.gas -= 50
+        if self.gas <= 0:
+            return False
+        else:
+            return True
+```
+```
+class Book:
+    def __init__(self, author, title):
+        self.author = author
+        self.title = title
+    
+    def __str__(self):
+        return f'{self.author}, {self.title}'
+    
+    def __eq__(self, other):
+        if self.author == other.author and self.title == other.title:
+            return True
+        else:
+            return False
+```
+
+* separate class file
+
+book.py
+```
+class Book:
+    def __init__(self, author, title):
+        self.author = author
+        self.title = title
+    
+    def __str__(self):
+        return f'{self.author}, {self.title}'
+    
+    def __eq__(self, other):
+        if self.author == other.author and self.title == other.title:
+            return True
+        else:
+            return False
+```
+
+bookcase.py
+```
+from book import Book
+
+
+class BookCase:
+    def __init__(self):
+       self.books = []
+    
+    def __iter__(self):
+        yield from self.books
+
+    def add_books(self, book):
+        self.books.append(book)
+```
