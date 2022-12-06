@@ -6,6 +6,17 @@ Murphy's Law : anything that can go wrong will go wrong
 
 
 input('')
+```
+# TODO: Prompt the user for parts of speech and store them in variables
+verb = input("Enter verb: ")
+noun = input("Enter noun: ")
+adjective = input("Enter adjective: ")
+
+# TODO: Output the template to the screen with the blanks filled out with what the user stated
+print(f"I enjoy practice! I find it helps me to {verb} better.")
+print(f"Without practice, my {noun} would probably not even work.")
+print(f"My code is getting more {adjective} every single day!")
+```
 
 ### Python Basic
 
@@ -19,9 +30,10 @@ print(var,"")
 * n // n # integer division
 * n %  n # remainder
 
+* \ escape character
 * print(" \n ")
 * """  """
-* len()
+* len(var)
 * var.upper()
 * var.lower()
 * var.title()
@@ -29,6 +41,13 @@ print(var,"")
 * print(f' {variable}')
 * " {} {}".format(variableOne,variableTwo)
 * "var" in "variable"
+* bool(0) // False
+* bool(1) // True
+* bool("") // False
+* bool("word") // True
+* not True
+* not False
+* True and True
 
 if condition:
     statement
