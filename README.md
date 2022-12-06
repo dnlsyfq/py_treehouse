@@ -21,7 +21,14 @@ print(f"My code is getting more {adjective} every single day!")
 ### Python Basic
 
 ```
+// print command can take multiple values to output on the same line.
 print(var,"")
+print("Balance:", 5000)
+print("Iron", "Man", sep ="-")
+
+result = 798
+currency = "$"
+print("Total:", currency, result)
 ```
 
 * round()
@@ -124,6 +131,54 @@ while password != 'opensesame':
     attempt_count += 1
 print("Welcome to secret town")
 ```
+
+### Tuples
+* immutable
+```
+Tuples vs. Lists
+Reassignment and Immutability
+Use lists when you need to change your data or append more items.
+
+Because tuples are immutable, they can't be altered. That means they aren't the right choice when you need to loop over data and append it to a data structure.
+
+Variable size
+Use tuples when your data is fixed and pre-determined.
+
+Lists are variable in size, meaning you can always add or remove items from them. That's why lists are the right choice when you don't know their contents ahead of time.
+
+Tuples can't be added to, so you need to know their contents ahead of time. They are a good choice if you have a fixed set of data.
+
+Homogeneous vs Heterogeneous Content
+Use tuples for heterogeneous data and lists for homogeneous data
+
+Tuples are often used to store heterogeneous data. This meaning, if you have a mix of types, you'd probably use a tuple. Lists, however, are mostly used when you have homogeneous data - when all your data is of the same type.
+
+This is a semantic difference, and is not something that would impact the functionality of your code. It is a common use case, though. That's because lists are commonly used when you want to loop over data and perform an action on each item. That's easy to do without error if all items in a list are of the same type.
+
+Tuples, on the other hand, are fixed and created with pre-determined data. This means tuples can follow a "schema" that describes something. See the following example
+
+# A tuple might contain data about a person (heterogeneous type mixture)
+person_a = (name, age, occupation, address)
+
+# A list might contain a list of people (homogeneous type mixture - all tuples!)
+people = [person_a, person_b, person_c]
+Efficiency
+Use tuples for faster and more efficient access.
+
+Because tuples are immutable, they are accessed more quickly and are more memory efficient than lists. This means that, as long as you know your data isn't going to change, a tuple is the more performant choice.
+```
+
+```
+groceries = 'apples', 'oranges', 'lettuce', 'cheddar cheese'
+groceries = ('apples', 'oranges', 'lettuce', 'cheddar cheese')
+
+# A tuple!
+my_tuple = 1,
+
+# The same tuple!
+my_tuple = (1,)
+```
+
 ### List
 
 * len(list)
