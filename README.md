@@ -5,7 +5,7 @@ Murphy's Law : anything that can go wrong will go wrong
 ### user
 
 
-input('')
+input('') // produce string
 ```
 # TODO: Prompt the user for parts of speech and store them in variables
 verb = input("Enter verb: ")
@@ -239,25 +239,38 @@ print_teacher(name='Ashley', job='Instructor', topic='Python')
 ```
 
 ### loops 
-
-* for i in variable:
-    print(i)
+```
+for i in variable:
+   print(i)
   
-* for index,element in enumerate(list):
-    print(index,element)
+for index,element in enumerate(list):
+   print(index,element)
+   
+for index,element in enumerate(list,1):
+   print(index,element)   
+   
+index = 1
+for item in groceries:
+    print(f'{index}. {item}')
+    index += 1
   
 * range(start,stop,step)
-
+```
 ### sequence
 
-* list[start:stop]
-* list[::-1]
+* list[start:stop:step]
+* list[::-1] // all but reverse order
 * 'character' in string
 * 'character' not in string 
 * string.count(value)
 * string.index(value)
 * list.index(value)
 * list.reverse()
+
+// work with tuples, string
+* len(list)
+* max(list)
+* min(list)
 
 ### function
 
