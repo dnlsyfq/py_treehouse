@@ -132,6 +132,28 @@ while password != 'opensesame':
 print("Welcome to secret town")
 ```
 
+```
+i = 0
+while True:
+  print(i)
+  i = i + 1
+  if i >= 5:
+    print("Breaking")
+    break
+
+print("Finished")
+```
+
+```
+i = 0
+while i<5:
+  i += 1
+  if i==3:
+    print("Skipping 3")
+    continue
+  print(i)
+```
+
 ### Tuples
 * immutable
 ```
