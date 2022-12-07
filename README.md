@@ -230,12 +230,44 @@ dict = {
 * for k,v in dict.items():
     print(k,v)
 
+
+### Function packing and unpacking
 ```
+
+def packer(*args):
+    print(args)
+
+packer('hi','i','love','you')
+
+
+def packer(*args):
+    for val in args:
+        print(val)
+        
+packer('hi','i','love','you')    
+
+
+def calculate_total(*args):
+    total = sum(args)
+    print(total)
+
+calculate_total(24,23,12)
+
 def print_teacher(**kwargs):
     for key,value in kwargs.items():
         print(f"{key}:{value}")
 
 print_teacher(name='Ashley', job='Instructor', topic='Python')
+```
+
+### Function unpacking
+```
+def unpacker():
+    return (1,2,3) // work with list
+    
+var1 ,var2 , var3 = unpacker()   
+
+first, last = input('Enter full name: \n').split(' ')
 ```
 
 ### loops 
