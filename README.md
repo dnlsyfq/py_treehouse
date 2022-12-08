@@ -1,9 +1,53 @@
 ### Side Note
 Murphy's Law : anything that can go wrong will go wrong 
 
+### Conda
+```
+conda create -n 100days numpy jupyter
+conda activate 100days
+```
+
+### Dunder main
+```
+// module.py
+if __name__=="__main__":
+    print("module")
+
+// script.py
+import module
+print("script")
+
+```
+
+```
+// module.py
+
+def gather_ingredients():
+    print("Groceries")
+
+def combine_ingredients():
+    print("Cook")
+
+def main():
+    gather_ingredients()
+    combine_ingredients()
+    
+if __name__ == "__main__":
+    main()
+    
+
+// script.py
+
+import module
+
+module.main()        
+       
+
+
+```
+
 
 ### user
-
 
 input('') // produce string
 ```
@@ -215,6 +259,13 @@ list method
 * del list[index]
 * list.pop()
 * list.pop(index)
+```
+nums = [1, 2, 3]
+print(not 4 in nums)
+print(4 not in nums)
+print(not 3 in nums)
+print(3 not in nums)
+```
 
 * for i in list
 * i in list
@@ -252,6 +303,23 @@ dict = {
 * for k,v in dict.items():
     print(k,v)
 
+### Numpy
+```
+np.array(var)
+var.dtype
+var.itemsize
+var.size   // 12
+var.nbytes
+var.ndim  // 2
+var.shape // (3,4)
+var.itemsize * var.size // bytes 
+np.info(var)
+
+np.zeros(int,np.uint16)
+
+%whos
+%whos ndarray
+```
 
 ### Function packing and unpacking
 ```
@@ -312,6 +380,7 @@ for item in groceries:
 ```
 ### sequence
 
+* list(range(int))
 * list[start:stop:step]
 * list[::-1] // all but reverse order
 * 'character' in string
@@ -325,6 +394,11 @@ for item in groceries:
 * len(list)
 * max(list)
 * min(list)
+
+```
+squares = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+print(squares[1:-1])
+```
 
 ### function
 
@@ -366,6 +440,25 @@ app.print_hello()
 ### OOP 
 
 dir(oop)
+
+```
+class Panda:
+    species = 'Ailuropoda melanoleuca'
+    food = 'bamboo'
+
+    def __init__(self, name, age):
+        self.is_hungry = True
+        self.name = name
+        self.age = age
+        
+    def eat(self):
+        self.is_hungry = False
+        return f'{self.name} eats {self.food}.'
+        
+    def check_if_hungry(self):
+        if self.is_hungry:
+            self.eat()
+```
 
 ```
 class Car:
