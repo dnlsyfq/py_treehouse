@@ -249,6 +249,8 @@ my_tuple = (1,)
 
 * len(list)
 * list(string)
+* list[:] // copy all
+* list[::-1] // reverse
   
 list method
 * list.append(value)
@@ -314,11 +316,56 @@ var.ndim  // 2
 var.shape // (3,4)
 var.itemsize * var.size // bytes 
 np.info(var)
+np.arange(int)
+var.shape = (int,int)
+
+// check copy
+list.base is None // True
+listTwo.base is None  // False
+listTwo.base is list  // True
+
+list.flags['OWNDATA'] // True
+
+list[:] // view
+list.copy() 
+
+
 
 np.zeros(int,np.uint16)
 
 %whos
 %whos ndarray
+
+
+// slicing
+np_var[row]
+np_var[row][col]
+np_var[row,col]
+np_var[row:row,col:]
+np_var[row:row,col::int]
+
+
+// random integer
+rand = np.random.RandomState(42)
+fake_log = rand.randint(30,180,size=100,dtype=np.uint16)
+fake_log
+
+
+
+// indexing using list 
+fake_log[[3,8]] // slicing idx 3 and 8 only
+
+// indexing using array 
+index = np.array([
+    [3,8],
+    [0,1]
+])
+fake_log[index]
+
+
+
+np.append(arr,ar) // must same dimension
+
 ```
 
 ### Function packing and unpacking

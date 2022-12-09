@@ -35,11 +35,24 @@ class Car:
         else:
             return True
 
+    def __str__(self):
+        '''Print Class Info'''
+        return f'{self.make} {self.model} {self.year}'
+
+    def __eq__(self, other):
+        return self.make == other.make and self.model == other.model
+
+
 
 car_one = Car("Model T", 1908)
 car_two = Car("Phantom", 2020, "Rolls Royce")
 
+if car_one == car_two:
+    print("equal")
+else:
+    print("not equal")
 
+print(car_one)
 
 print(car_one.make)
 print(car_two.make)
@@ -57,4 +70,23 @@ print(isinstance(car_one, Car))
 car_one.doors = 4
 Car.doors = 4
 car_one.year = 2015
+
+# __iter__
+class Dealership:
+    # cars = ['Ford Fusion','Honda Civic','Dodge Dakota']
+
+    def __int__(self):
+        self.cars = []
+
+    def __iter__(self):
+        yield from self.cars
+
+    def add_car(self,car):
+        self.cars.append(car)
+
+
+my_dealership = Dealership()
+my_dealership.add_car('bmw')
+for car in my_dealership:
+    print(car)
 
