@@ -318,6 +318,11 @@ var.itemsize * var.size // bytes
 np.info(var)
 np.arange(int)
 var.shape = (int,int)
+var.reshape(row,col)
+var.ravel() // all into 1D
+var.flatter()
+np.lookfor('flat')
+var.T // transpose
 
 // check copy
 list.base is None // True
